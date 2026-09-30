@@ -1,0 +1,182 @@
+1. Consultar el producto "P009" y cambiar su precio a $4,990. Mostrar el documento antes y después
+de la modificación.
+------
+db.productos.find({sku: "P009"})
+
+db.productos.updateOne(
+{sku:"P009"},
+{$set:{precio:4990}}
+)
+db.productos.find({sku: "P009"})
+--------
+2. Incrementar en 10 unidades el stock del producto "P010". Mostrar el documento antes y después
+de la modificación.
+
+---------
+db.productos.find({sku: "P010"})
+db.productos.updateOne(
+{sku:"P010"},
+{$inc:{stock:10}}
+)
+db.productos.find({sku: "P010"})
+----------
+3. Disminuir en 3 unidades el stock del producto "P011". Mostrar el documento antes y después de
+la modificación.
+
+---------------------------
+
+db.productos.find({sku: "P011"})
+db.productos.updateOne(
+{sku:"P011"},
+{$inc:{stock:-3}}
+)
+db.productos.find({sku: "P011"})
+-----------------
+4. Modificar el producto "P005" para que su precio sea $1,550 y aumentar su stock en 8 unidades en
+la misma operación. Mostrar el documento antes y después.
+
+---------------------------------------
+db.productos.find({sku: "P005"})
+db.productos.updateOne(
+{sku:"P005"},
+{$set:{precio:1550},
+{$inc:{stock:8}}
+)
+db.productos.find({sku: "P005"})
+
+----------------
+5. Agregar la etiqueta "recomendado" al producto "P005". Ejecutar la actualización dos veces,
+comprobar el resultado y explicar qué ocurre.
+-----------------------
+
+db.productos.updateOne(
+{sku:"P005"},
+{$addToSet:{etiquetas:"recomendado"}}
+)
+
+db.productos.updateOne(
+{sku:"P005"},
+{$addToSet:{etiquetas:"recomendado"}}
+)
+
+db.productos.find({sku:"P005"})
+
+
+La segunda ejecucion no hace mucho por que ya se creo la etiqueta de ante mano
+
+-------------------------------------------------
+6. Consultar todos los productos de categoría "Accesorios" y posteriormente incrementar su stock en
+10 unidades mediante updateMany(). Mostrar los documentos antes y después.
+-----------------------------------------------
+db.productos.find({categoria: "Accesorios"})
+
+db.productos.updateMany(
+  { categoria: "Accesorios" },
+  { $inc: { stock: 10 } }
+)
+
+db.productos.find({categoria: "Accesorios"})
+--------------------------------------------------
+7. Agregar la etiqueta "catalogo" a todos los productos de categoría "Computo". Consultar
+posteriormente los productos para comprobar la modificación.
+
+---------------------------------------
+db.productos.find({categoria:"Computo"})
+
+
+db.productos.updateMany(
+{categoria:"Computo"},
+{$addToSet:{etiquetas:"catalogo"}}
+)
+
+db.productos.find({categoria:"Computo"})
+-----------------------------
+8. Agregar al producto "P009" el campo garantia_meses: 12. Comprobar que fue agregado y
+posteriormente eliminarlo utilizando $unset.
+----------------------------
+db.productos.find({sku:"P009"})
+
+
+db.productos.updateOne(
+{sku:"P009"},
+{$addToSet:{garantia_meses:12}}
+)
+
+db.productos.find({sku:"P009"})
+
+db.productos.updateOne(
+{sku:"P009"},
+{$unset:{garantia_meses:12}}
+)
+
+db.productos.find({sku:"P009"})
+---------------------
+9. Crear un producto temporal con sku:"TEMP02", precio $200 y stock 5. Consultarlo, eliminarlo
+mediante su sku utilizando deleteOne() y comprobar que ya no existe.
+-------------------------
+db.productos.insertOne({
+sku:"TEMP02",
+precio:200,
+stock:5
+})
+db.productos.deleteOne({sku:"TEMP02"})
+
+
+--------------------------
+10. Crear dos productos temporales "TEMP03" y "TEMP04" mediante insertMany(). Consultar
+ambos, eliminar únicamente "TEMP03" y comprobar que "TEMP04" continúa almacenado.
+---------------------------------
+db.productos.insertMany({
+sku:"TEMP03"
+},
+{sku:"TEMP04"}}
+)
+
+
+db.productos.deleteOne({sku:"TEMP03"})
+
+-----------------------------
+11. Crear tres documentos temporales con categoría "Eliminar". Consultarlos antes de eliminarlos,
+utilizar deleteMany() y verificar que los tres fueron eliminados.
+Facultad de Informática Culiacán · Manual de prácticas MongoDB
+
+------------------------------------------
+db.productos.insertMany([
+  {sku:"TEMP05", categoria:"Eliminar"},
+  {sku:"TEMP06", categoria:"Eliminar"},
+  {sku:"TEMP07", categoria:"Eliminar"}
+])
+
+db.productos.deleteMany({categoria:"Eliminar"})
+
+
+
+
+
+--------------------------------------------
+12. Explicar por qué es recomendable ejecutar primero find() utilizando el mismo filtro que
+posteriormente se empleará en updateMany(), deleteOne() o deleteMany().
+
+-----------------
+
+ 	Por que los cambios son permanentes es mejor ver como 'se veria' si lo hicieramos en ves de ejecutar la operacion en si.
+
+	Solo cuando estemos seguros usaremos esta tecnica.
+
+
+------------------------------
+13. Explicar la diferencia entre matchedCount y modifiedCount después de una actualización.
+
+------------------------------
+	MatchedCount son los que se mantuvieron yguales y modifiedCount los que cambiaron al modificar el archivo.
+
+
+----------------------------------
+14. Explicar por qué $addToSet es más adecuado que agregar directamente un elemento cuando se
+desea evitar valores duplicados en un array.
+
+----------------------------
+
+ 	Si no hicieramos eso, creariamos un documento nuevo que seria quasi-identico al anterior solo que con columnas adicionales.
+
+-----------------------------
