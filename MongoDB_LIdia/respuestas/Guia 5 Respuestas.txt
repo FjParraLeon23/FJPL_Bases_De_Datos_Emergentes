@@ -214,18 +214,123 @@ precio: 1
 }
 ).skip(0).limit(10)
 7. Seleccionar un cliente_id que tenga varias ventas y muestre todas sus operaciones.
+
+ db.ventas.find({cliente_id: 'C010'})
+
+
 8. Seleccione un sku existente y localice todas las ventas en las que aparezca ese producto.
+
+db.ventas.find({
+   "items": {
+     $elemMatch: { "sku": "P010"}
+   }
+ })
+
 9. Obtener todas las ventas realizadas mediante online
+db.ventas.find( {
+
+canal:'online'
+})
+
 10. Obtener todas las ventas realizadas mediante app.
+
+db.ventas.find( {
+
+canal:'telefónico'
+})
+
 11. Obtener las ventas cuyo estado sea completada.
+
+db.ventas.find( {
+
+estado:'completada'
+})
 12. Obtener las ventas cuyo estado sea cancelada. Mostrar solo venta_id, cliente_id, fecha total estado
+
+db.ventas.find( {
+
+estado:'cancelada'
+},
+{
+venta_id: 1,
+cliente_id:1,
+fecha:1,
+total:1,
+estado:1
+}
+)
 
 13. Mostrar las ventas ordenadas de mayor a menor según total. Mostrar solo venta_id, cliente_id,
 fecha, total
+
+db.ventas.find( {
+ },
+ {
+ venta_id: 1,
+ cliente_id:1,
+ fecha:1,
+ total:1,
+ }
+ ).sort({
+	total:1
+})
+
+
 14. Obtener las 10 ventas con mayor importe total. Combinar find(), sort(), limit().
+
+db.ventas.find( {
+ },
+ {
+ }
+ ).sort({
+	total:1
+}).limit(10)
+
+
+
+
 15. Mostrar las ventas en páginas de 10 documentos. Obtener Página 1, Página 2, Página 3.
+
+
+db.ventas.find( {
+ },
+ {
+ }
+ ).sort({
+	total:1
+}).skip(0).limit(10)
+
+db.ventas.find( {
+ },
+ {
+ }
+ ).sort({
+	total:1
+}).skip(10).limit(10)
+
+
+db.ventas.find( {
+ },
+ {
+ }
+ ).sort({
+	total:1
+}).skip(20).limit(10)
 16. Seleccionar una ciudad existente en los documentos y obtenga todos los clientes que residan en
 ella. Utilizar el campo: "direccion.ciudad".
+
+
+db.clientes.find
+({
+   "direccion": {
+     $elemMatch: { "ciudad": "Culiacán"}
+   }
+ })
+
+
+
+
+
 17. Obtener los clientes que tengan una preferencia por tecnología. Mostrar: cliente_id, nombre,
 preferencias.
 18. Seleccionar una venta que contenga al menos tres productos.

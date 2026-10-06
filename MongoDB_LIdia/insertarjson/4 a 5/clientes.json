@@ -1,0 +1,652 @@
+[
+  {
+    "cliente_id": "C001",
+    "nombre": "Carlos Martínez López",
+    "correo": "carlos.martinez@email.com",
+    "telefono": "6671234567",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["tecnologia", "electronica"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C002",
+    "nombre": "María González Rodríguez",
+    "correo": "maria.gonzalez@email.com",
+    "telefono": "6671234568",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["moda", "belleza"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C003",
+    "nombre": "Juan Pérez Silva",
+    "correo": "juan.perez@email.com",
+    "telefono": "6671234569",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["deporte", "fitness"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C004",
+    "nombre": "Laura Fernández García",
+    "correo": "laura.fernandez@email.com",
+    "telefono": "6671234570",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["viajes", "turismo"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C005",
+    "nombre": "Roberto Sánchez Morales",
+    "correo": "roberto.sanchez@email.com",
+    "telefono": "6671234571",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["tecnologia", "videojuegos"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C006",
+    "nombre": "Ana Ramírez Hernández",
+    "correo": "ana.ramirez@email.com",
+    "telefono": "6671234572",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["cocina", "gastronomia"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C007",
+    "nombre": "David Torres Jiménez",
+    "correo": "david.torres@email.com",
+    "telefono": "6671234573",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["electronica", "informatica"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C008",
+    "nombre": "Sofía López Castillo",
+    "correo": "sofia.lopez@email.com",
+    "telefono": "6671234574",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["musica", "arte"],
+    "activo": false
+  },
+  {
+    "cliente_id": "C009",
+    "nombre": "Miguel Ángel Cruz Reyes",
+    "correo": "miguel.cruz@email.com",
+    "telefono": "6671234575",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["negocios", "finanzas"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C010",
+    "nombre": "Claudia Mendoza Vázquez",
+    "correo": "claudia.mendoza@email.com",
+    "telefono": "6671234576",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["salud", "bienestar"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C011",
+    "nombre": "Fernando Ortiz Díaz",
+    "correo": "fernando.ortiz@email.com",
+    "telefono": "6671234577",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["automovilismo", "motos"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C012",
+    "nombre": "Gabriela Moreno Romero",
+    "correo": "gabriela.moreno@email.com",
+    "telefono": "6671234578",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["educacion", "cursos"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C013",
+    "nombre": "Andrés Rodríguez Campos",
+    "correo": "andres.rodriguez@email.com",
+    "telefono": "6671234579",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["tecnologia", "electronica"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C014",
+    "nombre": "Patricia Flores Navarro",
+    "correo": "patricia.flores@email.com",
+    "telefono": "6671234580",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["hogar", "decoracion"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C015",
+    "nombre": "Ricardo Gutiérrez Herrera",
+    "correo": "ricardo.gutierrez@email.com",
+    "telefono": "6671234581",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["tecnologia", "software"],
+    "activo": false
+  },
+  {
+    "cliente_id": "C016",
+    "nombre": "Valentina Acosta Quintero",
+    "correo": "valentina.acosta@email.com",
+    "telefono": "6671234582",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["fotografia", "arte"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C017",
+    "nombre": "Óscar Cabrera López",
+    "correo": "oscar.cabrera@email.com",
+    "telefono": "6671234583",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["deporte", "futbol"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C018",
+    "nombre": "Catalina Soto Ruiz",
+    "correo": "catalina.soto@email.com",
+    "telefono": "6671234584",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["moda", "compras"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C019",
+    "nombre": "Javier Montes Espinosa",
+    "correo": "javier.montes@email.com",
+    "telefono": "6671234585",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["viajes", "aventura"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C020",
+    "nombre": "Roxana Delgado García",
+    "correo": "roxana.delgado@email.com",
+    "telefono": "6671234586",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["belleza", "skincare"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C021",
+    "nombre": "Ernesto Chavez Reyes",
+    "correo": "ernesto.chavez@email.com",
+    "telefono": "6671234587",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["construccion", "inmuebles"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C022",
+    "nombre": "Mariana Cortés Velasco",
+    "correo": "mariana.cortes@email.com",
+    "telefono": "6671234588",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["tecnologia", "electronica"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C023",
+    "nombre": "Guillermo Vargas Morales",
+    "correo": "guillermo.vargas@email.com",
+    "telefono": "6671234589",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["deportes", "gym"],
+    "activo": false
+  },
+  {
+    "cliente_id": "C024",
+    "nombre": "Estefania Rojas Núñez",
+    "correo": "estefania.rojas@email.com",
+    "telefono": "6671234590",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["cosmetica", "moda"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C025",
+    "nombre": "Vicente Herrera Duarte",
+    "correo": "vicente.herrera@email.com",
+    "telefono": "6671234591",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["agricultura", "negocios"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C026",
+    "nombre": "Francisca Ibáñez Castro",
+    "correo": "francisca.ibanez@email.com",
+    "telefono": "6671234592",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["libros", "lectura"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C027",
+    "nombre": "Raúl Medina Ponce",
+    "correo": "raul.medina@email.com",
+    "telefono": "6671234593",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["electronica", "informatica"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C028",
+    "nombre": "Beatriz Pascual Figueroa",
+    "correo": "beatriz.pascual@email.com",
+    "telefono": "6671234594",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["musica", "conciertos"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C029",
+    "nombre": "Sergio Anguiano Rivas",
+    "correo": "sergio.anguiano@email.com",
+    "telefono": "6671234595",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["cine", "entretenimiento"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C030",
+    "nombre": "Adriana Valenzuela Carrillo",
+    "correo": "adriana.valenzuela@email.com",
+    "telefono": "6671234596",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["tecnologia", "electronica"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C031",
+    "nombre": "Alberto Ibáñez Contreras",
+    "correo": "alberto.ibanez@email.com",
+    "telefono": "6671234597",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["gaming", "videojuegos"],
+    "activo": false
+  },
+  {
+    "cliente_id": "C032",
+    "nombre": "Natalia Espinoza Ramírez",
+    "correo": "natalia.espinoza@email.com",
+    "telefono": "6671234598",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["yoga", "bienestar"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C033",
+    "nombre": "Enrique Palomar Díaz",
+    "correo": "enrique.palomar@email.com",
+    "telefono": "6671234599",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["tecnologia", "electronica"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C034",
+    "nombre": "Ivette Fuentes Mejía",
+    "correo": "ivette.fuentes@email.com",
+    "telefono": "6671234600",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["cocina", "recetas"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C035",
+    "nombre": "Patricio Navarro Estrada",
+    "correo": "patricio.navarro@email.com",
+    "telefono": "6671234601",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["viajes", "hoteles"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C036",
+    "nombre": "Lorena Aguirre Palacios",
+    "correo": "lorena.aguirre@email.com",
+    "telefono": "6671234602",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["electronica", "gadgets"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C037",
+    "nombre": "Marcos Serna Uribe",
+    "correo": "marcos.serna@email.com",
+    "telefono": "6671234603",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["tecnologia", "programacion"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C038",
+    "nombre": "Silvia Quiñones Carrasco",
+    "correo": "silvia.quinones@email.com",
+    "telefono": "6671234604",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["negocios", "emprendimiento"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C039",
+    "nombre": "Leonardo Rosales Vega",
+    "correo": "leonardo.rosales@email.com",
+    "telefono": "6671234605",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["deporte", "boxeo"],
+    "activo": false
+  },
+  {
+    "cliente_id": "C040",
+    "nombre": "Daniela Ríos Quintana",
+    "correo": "daniela.rios@email.com",
+    "telefono": "6671234606",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["tecnologia", "electronica"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C041",
+    "nombre": "Héctor Barragán Salcido",
+    "correo": "hector.barragan@email.com",
+    "telefono": "6671234607",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["construccion", "ingenieria"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C042",
+    "nombre": "Alejandra Cervantes Muñoz",
+    "correo": "alejandra.cervantes@email.com",
+    "telefono": "6671234608",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["salud", "nutricion"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C043",
+    "nombre": "Felipe Escobar Rodríguez",
+    "correo": "felipe.escobar@email.com",
+    "telefono": "6671234609",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["electronica", "informatica"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C044",
+    "nombre": "Verónica Zamora Acuña",
+    "correo": "veronica.zamora@email.com",
+    "telefono": "6671234610",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["moda", "accesorios"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C045",
+    "nombre": "Julio Rentería Santillán",
+    "correo": "julio.renteria@email.com",
+    "telefono": "6671234611",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["tecnologia", "electronica"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C046",
+    "nombre": "Carmen Lara Esqueda",
+    "correo": "carmen.lara@email.com",
+    "telefono": "6671234612",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["arte", "pintura"],
+    "activo": false
+  },
+  {
+    "cliente_id": "C047",
+    "nombre": "Cristobal Zamorano Flores",
+    "correo": "cristobal.zamorano@email.com",
+    "telefono": "6671234613",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["viajes", "camping"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C048",
+    "nombre": "Rosario Vega Montes",
+    "correo": "rosario.vega@email.com",
+    "telefono": "6671234614",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["electronica", "audiophile"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C049",
+    "nombre": "Antonio Campos Villarreal",
+    "correo": "antonio.campos@email.com",
+    "telefono": "6671234615",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["deportes", "natacion"],
+    "activo": true
+  },
+  {
+    "cliente_id": "C050",
+    "nombre": "Edith Serrano Gutierrez",
+    "correo": "edith.serrano@email.com",
+    "telefono": "6671234616",
+    "direccion": {
+      "ciudad": "Culiacán",
+      "estado": "Sinaloa",
+      "cp": "80000"
+    },
+    "preferencias": ["tecnologia", "electronica"],
+    "activo": true
+  }
+]

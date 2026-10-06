@@ -1,0 +1,72 @@
+[
+  {
+    "proveedor_id": "PR001",
+    "nombre": "TecnoSupply Sinaloa",
+    "ciudad": "Culiacán",
+    "estado": "Sinaloa",
+    "activo": true
+  },
+  {
+    "proveedor_id": "PR002",
+    "nombre": "Electrónica Mazatlán S.A.",
+    "ciudad": "Mazatlán",
+    "estado": "Sinaloa",
+    "activo": true
+  },
+  {
+    "proveedor_id": "PR003",
+    "nombre": "Distribuidora de Componentes Los Mochis",
+    "ciudad": "Los Mochis",
+    "estado": "Sinaloa",
+    "activo": true
+  },
+  {
+    "proveedor_id": "PR004",
+    "nombre": "Supplies Informáticos del Norte",
+    "ciudad": "Culiacán",
+    "estado": "Sinaloa",
+    "activo": true
+  },
+  {
+    "proveedor_id": "PR005",
+    "nombre": "Proveedora Comercial Guamuchil",
+    "ciudad": "Guamúchil",
+    "estado": "Sinaloa",
+    "activo": true
+  },
+  {
+    "proveedor_id": "PR006",
+    "nombre": "GlobalTech Distribuidora",
+    "ciudad": "Durango",
+    "estado": "Durango",
+    "activo": true
+  },
+  {
+    "proveedor_id": "PR007",
+    "nombre": "Importadora Mocorito Express",
+    "ciudad": "Mocorito",
+    "estado": "Sinaloa",
+    "activo": false
+  },
+  {
+    "proveedor_id": "PR008",
+    "nombre": "Equipos y Accesorios Cosalá",
+    "ciudad": "Cosalá",
+    "estado": "Sinaloa",
+    "activo": true
+  },
+  {
+    "proveedor_id": "PR009",
+    "nombre": "Mayorista TechnoZone",
+    "ciudad": "Monterrey",
+    "estado": "Nuevo León",
+    "activo": true
+  },
+  {
+    "proveedor_id": "PR010",
+    "nombre": "Logística y Distribución Salvador Alvarado",
+    "ciudad": "Salvador Alvarado",
+    "estado": "Sinaloa",
+    "activo": true
+  }
+]
