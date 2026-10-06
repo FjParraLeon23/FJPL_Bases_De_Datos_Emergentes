@@ -1,0 +1,11 @@
+Si se me borra todo ejecuto:
+	"D:\mongodb\data\bin\mongod.exe" --dbpath D:\mongodb\basedatos --logpath D:\mongodb\mongod.log --bind_ip 127.0.0.1
+ 
+	Tambien no olvidar borrar la carpeta basedatos y volver a hacerlo. Guardar todo con compass.
+
+
+ELSE
+	"D:\mongodb\data\bin\mongod.exe" --dbpath D:\mongodb\basedatos --logpath D:\mongodb\mongod.log
+
+		
+D:\mongodb\mongosh\mongosh.exe
