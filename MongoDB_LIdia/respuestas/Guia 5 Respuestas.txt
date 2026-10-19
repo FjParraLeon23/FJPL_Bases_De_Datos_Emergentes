@@ -322,10 +322,7 @@ ella. Utilizar el campo: "direccion.ciudad".
 
 db.clientes.find
 ({
-   "direccion": {
-     $elemMatch: { "ciudad": "Culiacán"}
-   }
- })
+   "direccion.ciudad": "Culiacán"})
 
 
 
@@ -333,7 +330,40 @@ db.clientes.find
 
 17. Obtener los clientes que tengan una preferencia por tecnología. Mostrar: cliente_id, nombre,
 preferencias.
+
+db.clientes.find({
+preferencias:"tecnologia"
+},
+
+{
+
+cliente_id:1,
+nombre:1,
+preferencias:1
+}
+)
+
 18. Seleccionar una venta que contenga al menos tres productos.
+
+db.ventas.find(
+{
+"items.cantidad": { 
+$gt:2}
+
+}
+)
 19. Seleccionar una venta y determine a qué cliente pertenece.
+db.ventas.find(
+{},
+{_id:1, cliente_id:1}
+
+).limit(1)
+
 20. Mostrar las colecciones. Deben aparecer: productos, clientes, proveedores, ventas.
+show collections
+
 21. Mostrar el número de documentos para cada colección. El resultado debería ser:
+db.productos.countDocuments()
+db.clientes.countDocuments()
+db.proveedores.countDocuments()
+db.ventas.countDocuments()
