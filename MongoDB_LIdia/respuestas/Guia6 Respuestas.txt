@@ -1,0 +1,265 @@
+1. Calcular el número total de ventas utilizando $group y $sum.
+------------------------------------
+db.ventas.aggregate([
+{
+$group: {
+_id: null,
+numero_ventas: { $sum: 1 }
+}
+}
+])
+-------------------------------------
+
+2. Calcular el ingreso total generado por todas las ventas.
+-----------------------------------------------------------
+db.ventas.aggregate([
+{
+$group: {
+_id: null,
+ventas: { $sum: 1 },
+ingreso_total: { $sum: "$total" }
+}
+}
+])
+
+-----------------------------------------------------------
+3. Calcular el importe promedio de las ventas.
+db.ventas.aggregate([
+{
+$group: {
+_id: null,
+ticket_promedio: { $avg: "$total" }
+}
+}
+])
+
+
+4- calcular r en una sola consulta el número de ventas, ingreso total, venta mínima, venta máxima y
+ticket promedio.
+db.ventas.aggregate([
+{
+$group: {
+_id: null,
+ventas: { $sum: 1 },
+ingreso_total: { $sum: "$total" },
+ticket_promedio: { $avg: "$total" },
+venta_minima: { $min: "$total" },
+venta_maxima: { $max: "$total" }
+}
+}
+])
+5. Contar cuántas ventas existen por canal.
+
+db.ventas.aggregate([
+{
+$group: {
+_id: "$canal",
+ventas: { $sum: 1 }
+}
+}
+])
+6. Calcular el ingreso total por canal.
+db.ventas.aggregate([
+{
+$group: {
+_id: "$canal",
+ventas: { $sum: 1 },
+ingreso_total: { $sum: "$total" }
+}
+}
+])
+
+7. Calcular el ticket promedio por canal.
+db.ventas.aggregate([
+{
+$group: {
+_id: "$canal",
+ventas: { $sum: 1 },
+ticket_promedio: { $avg: "$total" }
+}
+}
+])
+
+8. Ordenar los canales desde el de mayor ingreso hasta el de menor.
+
+db.ventas.aggregate([
+{
+$group: {
+_id: "$canal",
+ventas: { $sum: 1 },
+ingreso_total: { $sum: "$total" }
+}
+},
+{
+$sort: {
+ingreso_total: -1
+}
+}
+])
+9. Contar cuántas ventas existen por estado.
+db.ventas.aggregate([
+{
+$group: {
+_id: "$estado",
+ventas: { $sum: 1 }
+}
+}
+])
+
+10. Calcular el ingreso asociado con cada estado.
+db.ventas.aggregate([
+{
+$group: {
+_id: "$estado",
+ventas: { $sum: 1 },
+ingreso_total: { $sum: "$total" }
+}
+},
+{
+$sort: {
+ventas: -1
+}
+}
+])
+
+11. Analizar únicamente las ventas cuyo estado sea "completada".
+db.ventas.find(
+{estado: "completada"}
+
+)
+
+12. Calcular cuántas ventas completadas existen y cuál es su ingreso total.
+db.ventas.aggregate([
+{
+$match: {
+estado: "completada",
+}
+},
+{
+$group: {
+_id: "$estado",
+ventas: { $sum: 1 },
+ingreso: { $sum: "$total" },
+
+}
+}
+])
+
+13. Agrupar las ventas completadas por canal.
+db.ventas.aggregate([
+{
+$match: {
+estado: "completada"
+}
+},
+{
+$group: {
+_id: "$canal",
+ventas: { $sum: 1 },
+ingreso: { $sum: "$total" }
+}
+}
+])
+14. Calcular cuántas ventas ha realizado cada cliente.
+db.ventas.aggregate([
+{
+$group: {
+_id: "$cliente_id",
+ventas: { $sum: 1 }
+}
+}
+])
+15. Calcular el gasto acumulado por cliente.
+db.ventas.aggregate([
+{
+$group: {
+_id: "$cliente_id",
+ventas: { $sum: 1 },
+gasto_acumulado:{$sum:"total"}
+}
+}
+])
+16. Calcular el gasto promedio por cliente.
+db.ventas.aggregate([
+{
+$group: {
+_id: "$cliente_id",
+gasto_promedio:{$avg:"total"}
+}
+}
+])
+17. Obtener los 5 clientes con mayor gasto acumulado.
+db.ventas.aggregate([
+  {
+    $group: {
+      _id: "$cliente_id",
+      gasto_acumulado: { $sum: "$total" }
+    }
+  },
+  {
+    $sort: { gasto_acumulado: -1 }
+  },
+{
+$limit:5
+}
+])
+18. Obtener los 10 clientes con mayor número de compras.
+db.ventas.aggregate([
+  {
+    $group: {
+      _id: "$cliente_id",
+      numero_compras: { $sum: 1}
+    }
+  },
+  {
+    $sort: { gasto_acumulado: -1 }
+  },
+{
+$limit:10
+}
+])
+
+19. Filtrar ventas con total mayor o igual a $2,000 y calcular cuántas existen por canal.
+
+db.ventas.aggregate([
+{
+$match: {
+total:{$gte: 2000}
+
+}
+},
+{
+$group: {
+_id: "$canal",
+ventas: { $sum: 1 },
+ingreso: { $sum: "$total" }
+}
+}
+])
+20. Diseñar un pipeline propio que incluya al menos $match, $group y $sort, y explicar qué indicador
+comercial obtiene.
+
+db.ventas.aggregate([
+{
+$match: {
+total:{$gte: 2000}
+
+}
+},
+{
+$group: {
+_id: "$canal",
+ventas: { $sum: 1 },
+ingreso: { $sum: "$total" }
+}
+},{
+
+$sort: {
+ingreso: 1
+}
+}
+])
+
+-----------
+Filtra ventas con total mayor o igual a $2,000 y calcular cuántas existen por canal y las
+ordena de menor a mayor.

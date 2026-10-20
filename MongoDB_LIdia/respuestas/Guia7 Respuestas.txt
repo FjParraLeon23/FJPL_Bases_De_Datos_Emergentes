@@ -1,0 +1,294 @@
+1. Mostrar venta_id, cliente_id, fecha y total mediante $project.
+
+db.ventas.aggregate([
+{
+$project: {
+_id: 0,
+venta_id: 1,
+cliente_id: 1,
+fecha: 1,
+total: 1
+}
+}
+])
+
+
+2. Crear un campo denominado iva_estimado equivalente al 16 % del total de cada venta.
+
+db.ventas.aggregate([
+{
+$project: {
+_id: 0,
+venta_id: 1,
+total: 1,
+iva_estimado: {
+$multiply: ["$total", 0.16]
+}
+}
+}
+])
+3. Mostrar el año correspondiente a cada venta.
+db.ventas.aggregate([
+{
+$project: {
+_id: 0,
+venta_id: 1,
+fecha: 1,
+anio: {
+$year: "$fecha"
+}
+}
+}
+])
+4. Mostrar el mes correspondiente a cada venta.
+
+db.ventas.aggregate([
+
+{
+$project: {
+_id: 0,
+venta_id: 1,
+fecha: 1,
+mes: {
+$month: "$fecha"
+}
+}
+}
+])
+5. Mostrar año, mes y total de cada venta.
+db.ventas.aggregate([
+{
+$project: {
+_id: 0,
+venta_id: 1,
+anio: {
+$year: "$fecha"
+},
+mes: {
+$month: "$fecha"
+},
+total: 1
+}
+}
+])
+6. Agrupar las ventas por año y mes.
+
+db.ventas.aggregate([
+{
+$project: {
+anio: {
+$year: "$fecha"
+},
+mes: {
+$month: "$fecha"
+},
+total: 1
+}
+},
+{
+$group: {
+_id: {
+
+anio: "$anio",
+mes: "$mes"
+},
+ventas: {
+$sum: 1
+},
+ingreso_total: {
+$sum: "$total"
+}
+}
+},
+{
+$sort: {
+"_id.anio": 1,
+"_id.mes": 1
+}
+}
+])
+7. Calcular cuántas ventas existen por mes.
+
+db.ventas.aggregate([
+{
+$project: {
+mes: {
+$month: "$fecha"
+},
+total: 1
+}
+},
+{
+$group: {
+_id: {
+mes: "$mes"
+},
+cantidad_ventas_mes: {
+$sum: 1
+}
+}
+}
+])
+8. Calcular el ingreso total por mes.
+db.ventas.aggregate([
+{
+$project: {
+mes: {
+$month: "$fecha"
+},
+total: 1
+}
+},
+{
+$group: {
+_id: {
+mes: "$mes"
+},
+ventas_totales_mes: {
+$sum:"$total"
+}
+}
+}
+])
+
+9. Descomponer el array items utilizando $unwind.
+
+db.ventas.aggregate([
+{
+$unwind: "$items"
+}
+])
+10. Mostrar venta_id, sku, cantidad y precio de cada producto vendido.
+
+db.ventas.aggregate([
+{
+$unwind: "$items"
+},
+{
+$project: {
+_id: 0,
+venta_id: 1,
+cliente_id: 1,
+sku: "$items.sku",
+cantidad: "$items.cantidad",
+precio: "$items.precio"
+}
+}
+])
+11. Calcular las unidades vendidas por sku.
+
+db.ventas.aggregate([
+{
+$unwind: "$items"
+},
+
+{
+$group: {
+_id: "$items.sku",
+unidades_vendidas: {
+$sum: "$items.cantidad"
+}
+}
+}
+])
+12. Ordenar los productos de mayor a menor según unidades vendidas.
+
+db.ventas.aggregate([
+{
+$unwind: "$items"
+},
+Facultad de Informática Culiacán · Manual de prácticas MongoDB
+{
+$group: {
+_id: "$items.sku",
+unidades_vendidas: {
+$sum: "$items.cantidad"
+}
+}
+},
+{
+$sort: {
+unidades_vendidas: -1
+}
+}
+])
+13. Calcular el ingreso generado por cada producto.
+
+db.ventas.aggregate([
+{
+$unwind: "$items"
+},
+{
+$group: {
+_id: "$items.sku",
+unidades_vendidas: {
+$sum: "$items.cantidad"
+},
+ingreso_producto: {
+$sum: {
+$multiply: [
+"$items.cantidad",
+"$items.precio"
+]
+}
+}
+}
+},
+{
+$sort: {
+ingreso_producto: -1
+}
+}
+])
+
+
+14. Obtener los 5 productos con mayor ingreso.
+
+db.ventas.aggregate([
+{
+$unwind: "$items"
+},
+{
+$group: {
+_id: "$items.sku",
+unidades_vendidas: {
+$sum: "$items.cantidad"
+},
+ingreso_producto: {
+$sum: {
+$multiply: [
+"$items.cantidad",
+"$items.precio"
+]
+}
+}
+}
+},
+{
+$sort: {
+ingreso_producto: -1
+}
+},
+{
+$limit: 5
+}
+])
+15. Obtener los 10 productos con mayor cantidad de unidades vendidas.
+
+db.ventas.aggregate([
+  { $unwind: "$items" },
+  {
+    $group: {
+      _id: "$items.sku",
+      unidades_vendidas: { $sum: "$items.cantidad" }
+    }
+  },
+  { $sort: { unidades_vendidas: -1 } },
+  { $limit: 10 }
+])
+16. Analizar únicamente las ventas completadas y calcular las unidades vendidas por producto.
+17. Calcular los ingresos mensuales únicamente de las ventas completadas.
+18. Calcular el total de unidades vendidas en todas las operaciones.
+19. Calcular el promedio de unidades vendidas por producto.
+20. Diseñar un pipeline propio que incluya al menos $match, $unwind, $group y $sort, y explicar qué
+indicador comercial obtiene.
